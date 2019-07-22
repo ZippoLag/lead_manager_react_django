@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getLeads, deleteLead } from "../../actions/leadActions";
 
-export class Leads extends Component {
+export class LeadTable extends Component {
   static propTypes = {
     leads: PropTypes.array.isRequired,
     getLeads: PropTypes.func.isRequired,
@@ -54,10 +54,10 @@ export class Leads extends Component {
 }
 
 const mapStateToProps = state => ({
-  leads: state.leads.leads
+  leads: state.leadReducer.leads
 });
 
 export default connect(
   mapStateToProps,
   { getLeads, deleteLead }
-)(Leads);
+)(LeadTable);

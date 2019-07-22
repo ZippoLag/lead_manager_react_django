@@ -101,7 +101,7 @@ export class Register extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.authReducer.isAuthenticated
 });
 
 export default connect(

@@ -6,12 +6,12 @@ import { logoutAction } from "../../actions/authActions";
 
 export class Header extends Component {
   static propTypes = {
-    auth: PropTypes.object.isRequired,
+    authReducer: PropTypes.object.isRequired,
     logoutAction: PropTypes.func.isRequired
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated, user } = this.props.authReducer;
 
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -71,7 +71,7 @@ export class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  authReducer: state.authReducer
 });
 
 export default connect(

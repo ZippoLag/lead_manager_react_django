@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addLead } from "../../actions/leadActions";
 
-export class Form extends Component {
+export class AddLeadForm extends Component {
   state = {
     name: "",
     email: "",
@@ -78,4 +78,4 @@ export class Form extends Component {
 export default connect(
   null,
   { addLead }
-)(Form);
+)(AddLeadForm);

@@ -70,7 +70,7 @@ export class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.authReducer.isAuthenticated
 });
 
 export default connect(
