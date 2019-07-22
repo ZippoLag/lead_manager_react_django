@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { logoutAction } from "../../actions/auth";
+import { logoutAction } from "../../actions/authActions";
 
 export class Header extends Component {
   static propTypes = {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createMessage, returnErrors } from "./messages";
-import { getTokenConfig } from "./auth";
+import { getTokenConfig } from "./authActions";
 
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from "./types";
 
