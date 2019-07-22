@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { login } from "../../actions/auth";
+import { loginAction } from "../../actions/auth";
 
 export class Login extends Component {
   state = {
@@ -11,13 +11,13 @@ export class Login extends Component {
   };
 
   static propTypes = {
-    login: PropTypes.func.isRequired,
+    loginAction: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.login(this.state.username, this.state.password);
+    this.props.loginAction(this.state.username, this.state.password);
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -75,5 +75,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { login }
+  { loginAction: loginAction }
 )(Login);

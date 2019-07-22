@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { logout } from "../../actions/auth";
+import { logoutAction } from "../../actions/auth";
 
 export class Header extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
-    logout: PropTypes.func.isRequired
+    logoutAction: PropTypes.func.isRequired
   };
 
   render() {
@@ -20,7 +20,7 @@ export class Header extends Component {
         </span>
         <li className="nav-item">
           <button
-            onClick={this.props.logout}
+            onClick={this.props.logoutAction}
             className="nav-link btn btn-info btn-sm text-light"
           >
             Logout
@@ -76,5 +76,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logout }
+  { logoutAction: logoutAction }
 )(Header);

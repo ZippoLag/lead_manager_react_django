@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { register } from "../../actions/auth";
+import { registerAction } from "../../actions/auth";
 import { createMessage } from "../../actions/messages";
 
 export class Register extends Component {
@@ -14,7 +14,7 @@ export class Register extends Component {
   };
 
   static propTypes = {
-    register: PropTypes.func.isRequired,
+    registerAction: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
   };
 
@@ -29,7 +29,7 @@ export class Register extends Component {
         password,
         email
       };
-      this.props.register(newUser);
+      this.props.registerAction(newUser);
     }
   };
 
@@ -106,5 +106,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { register, createMessage }
+  { registerAction: registerAction, createMessage }
 )(Register);

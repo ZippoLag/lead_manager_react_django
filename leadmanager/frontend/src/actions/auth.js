@@ -18,7 +18,7 @@ export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get("/api/auth/user", tokenConfig(getState))
+    .get("/api/auth/user", getTokenConfig(getState))
     .then(res => {
       dispatch({
         type: USER_LOADED,
@@ -34,7 +34,7 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 // LOGIN USER
-export const login = (username, password) => dispatch => {
+export const loginAction = (username, password) => dispatch => {
   // Headers
   const config = {
     headers: {
@@ -62,7 +62,7 @@ export const login = (username, password) => dispatch => {
 };
 
 // REGISTER USER
-export const register = ({ username, password, email }) => dispatch => {
+export const registerAction = ({ username, password, email }) => dispatch => {
   // Headers
   const config = {
     headers: {
@@ -90,11 +90,11 @@ export const register = ({ username, password, email }) => dispatch => {
 };
 
 // LOGOUT USER
-export const logout = () => (dispatch, getState) => {
+export const logoutAction = () => (dispatch, getState) => {
   axios
-    .post("/api/auth/logout/", null, tokenConfig(getState))
+    .post("/api/auth/logout/", null, getTokenConfig(getState))
     .then(res => {
-      dispatch({ type: 'CLEAR_LEADS' });
+      dispatch({ type: "CLEAR_LEADS" });
       dispatch({
         type: LOGOUT_SUCCESS
       });
@@ -105,7 +105,7 @@ export const logout = () => (dispatch, getState) => {
 };
 
 // Setup config with token - helper function
-export const tokenConfig = getState => {
+export const getTokenConfig = getState => {
   // Get token from state
   const token = getState().auth.token;
 
