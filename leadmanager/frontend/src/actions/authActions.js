@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnErrors } from "./messages";
+import { returnErrors } from "./messageActions";
 
 import {
   USER_LOADED,
@@ -10,7 +10,7 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL
-} from "./types";
+} from "./actionTypes";
 
 // CHECK TOKEN & LOAD USER
 export const loadUser = () => (dispatch, getState) => {

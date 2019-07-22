@@ -1,4 +1,4 @@
-import { CREATE_MESSAGE, GET_ERRORS } from "./types";
+import { CREATE_MESSAGE, GET_ERRORS } from "./actionTypes";
 
 // CREATE MESSAGE
 export const createMessage = msg => {

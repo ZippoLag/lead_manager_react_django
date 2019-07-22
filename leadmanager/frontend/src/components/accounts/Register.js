@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { registerAction } from "../../actions/authActions";
-import { createMessage } from "../../actions/messages";
+import { createMessage } from "../../actions/messageActions";
 
 export class Register extends Component {
   state = {

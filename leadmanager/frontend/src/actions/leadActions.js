@@ -1,8 +1,8 @@
 import axios from "axios";
-import { createMessage, returnErrors } from "./messages";
+import { createMessage, returnErrors } from "./messageActions";
 import { getTokenConfig } from "./authActions";
 
-import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from "./types";
+import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from "./actionTypes";
 
 // GET LEADS
 export const getLeads = () => (dispatch, getState) => {
