@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import leads from "./leads";
-import errors from "./errors";
-import messages from "./messages";
-import auth from "./auth";
+import leadReducer from "./leadReducer";
+import errorReducer from "./errorReducer";
+import messageReducer from "./messageReducer";
+import authReducer from "./authReducer";
 
 export default combineReducers({
-  leads,
-  errors,
-  messages,
-  auth
+  leadReducer,
+  errorReducer,
+  messageReducer,
+  authReducer
 });
